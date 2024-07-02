@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,7 @@
         let offset = 0;
         async function fetchTime() {
             try {
-                const response = await fetch('http://worldtimeapi.org/api/timezone/Etc/UTC');
+                const response = await fetch('https://worldtimeapi.org/api/timezone/Etc/UTC');
                 const data = await response.json();
                 const serverTime = new Date(data.utc_datetime);
                 const localTime = new Date();
@@ -27,44 +26,40 @@
             const clockElement = document.getElementById('clock');
             const now = new Date(new Date().getTime() + offset);
             const timeString = now.toLocaleTimeString();
-            const dayString= now.toLocaleTimeString('en-US', { weekday:'long'});
-            clockElement.textContent = `${dayString}`;
+            const dayString = now.toLocaleDateString('en-US', { weekday: 'long' });
+            clockElement.textContent = `${dayString}, ${timeString}`;
         }
+
         fetchTime().then(() => {
             updateTime();
             setInterval(updateTime, 1000);
-        })
+        });
     </script>
 </head>
 
 <body>
-
-    <div class="container" id="clock" data-testid="currentTimeUTC">Clock</div>
-
-    <div class="container main">
-        <div>
-            <img src="assets/profile.jpg" alt="profile picture" data-testid="currentProfilePicture">
-        </div>
-        <div>
-            <h1>Goals</h1>
-            <p data-testid="slackDisplayName">My name is Favour Arinze, Adimora. I'm based in Enugu State, Nigeria.</p>
-            <p>My Goals for the next Two Years Include:</p>
-            <ul data-testid="twoYearGoals">
-                <li>Intern at Three or Four Companies</li>
-                <li>Gain Many Important Connections</li>
-                <li>Land a Role in Robotics Engineering</li>
-            </ul>
-            <p>
-                <a href="https://hng.tech/learn">Click Here for HNG Learning</a>
-            </p>
-            <p>
-                <a href="https://hng.tech/internships">Click Here for HNG Internships</a>
-            </p>
-        </div>
+<div class="container clock" id="clock" data-testid="currentTimeUTC">Clock</div>
+<div class="container main">
+    <div>
+        <img src="assets/profile.jpg" alt="profile picture" data-testid="currentProfilePicture">
     </div>
-
-
+    <div>
+        <h1>Goals</h1>
+        <p data-testid="slackDisplayName">My name is Favour Arinze, Adimora. I'm based in Enugu State, Nigeria.</p>
+        <p>My Goals for the next Two Years Include:</p>
+        <ul data-testid="twoYearGoals">
+            <li>Intern at Three or Four Companies</li>
+            <li>Gain Many Important Connections</li>
+            <li>Land a Role in Robotics Engineering</li>
+            <li></li>
+        </ul>
+        <p>
+            <a href="https://hng.tech/learn">Click Here for HNG Learning</a>
+        </p>
+        <p>
+            <a href="https://hng.tech/internships">Click Here for HNG Internships</a>
+        </p>
+    </div>
+</div>
 </body>
 </html>
-
-
