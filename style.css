@@ -1,0 +1,44 @@
+:root {
+    --main-primary-color: #FEFCF2;
+    --main-secondary-color: #162823;
+    --main-text-color: #000000;
+}
+
+@font-face { font-family: Bruce; src: url('assets/Bruce Forever.ttf');}
+
+body{
+  background-color: var(--main-primary-color);
+  color: var(--main-secondary-color);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+#foot-name{
+    font-family: "Artifakt Element Light", ui-monospace;
+    font-size: 15px;
+    color: white;
+    border: 10px;
+    border-radius: 5px;
+}
+
+#clock{
+    font-family: Bruce, ui-rounded;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-left: 20px;
+}
+
+p a{
+    text-decoration: none;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 25px;
+    font-size: 18px;
+    font-family: "Artifakt Element Light", ui-monospace;
+    color: var(--main-text-color);
+}
