@@ -13,14 +13,6 @@ body{
   margin: 0;
 }
 
-#foot-name{
-    font-family: "Artifakt Element Light", ui-monospace;
-    font-size: 15px;
-    color: white;
-    border: 10px;
-    border-radius: 5px;
-}
-
 #clock{
     font-family: Bruce, ui-rounded;
     font-size: 20px;
@@ -31,6 +23,11 @@ body{
 
 p a{
     text-decoration: none;
+    color: black;
+}
+
+img{
+    border-radius: 10px;
 }
 
 .main{
@@ -42,3 +39,16 @@ p a{
     font-family: "Artifakt Element Light", ui-monospace;
     color: var(--main-text-color);
 }
+
+@media (max-width: 576px) {
+    img{
+        width: 80%;
+    }
+
+    .main{
+        display: inline-block;
+    }
+}
+
+
+
